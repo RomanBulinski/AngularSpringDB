@@ -15,9 +15,7 @@ public class CityService implements ICityService {
 
     @Override
     public List<City> findAll() {
-
         List<City> cities = (List<City>) repository.findAll();
-
         return cities;
     }
 }
