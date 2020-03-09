@@ -9,5 +9,17 @@ CREATE TABLE apartments(id serial PRIMARY KEY, apartment_number VARCHAR(255), ar
 
 DROP TABLE IF EXISTS garages;
 CREATE TABLE garages(id serial PRIMARY KEY, garage_number VARCHAR(255), area numeric, level integer);
-INSERT INTO garages(garage_number, area, level) VALUES('1G', 12.75, -1);
-INSERT INTO garages(garage_number, area, level) VALUES('2G', 12.75, -1);
+
+DROP TABLE IF EXISTS permissions;
+CREATE TABLE permissions(id serial PRIMARY KEY, permission_name VARCHAR(255));
+
+DROP TABLE IF EXISTS roles;
+CREATE TABLE roles(id serial PRIMARY KEY, role_name VARCHAR(255));
+
+DROP TABLE IF EXISTS permissions_in_role;
+CREATE TABLE permissions_in_roles(id serial PRIMARY KEY, role_id integer, permissions_id integer );
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users(id serial PRIMARY KEY, login VARCHAR(255), email VARCHAR (255), role_id integer );
+
+
