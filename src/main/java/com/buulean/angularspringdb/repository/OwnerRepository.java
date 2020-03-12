@@ -13,5 +13,8 @@ public interface OwnerRepository extends JpaRepository<Owner, Long> {
 
     void delete(Owner owner);
 
+//    Owner save(Owner owner);
+
+
 
 }

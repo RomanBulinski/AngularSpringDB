@@ -26,4 +26,23 @@ public class OwnerService implements IOwnerService {
         }
         return owner;
     }
+
+    @Override
+    public Owner create(Owner owner) {
+        return ownerRepository.save(owner);
+    }
+
+    @Override
+    public Owner findById(int id) {
+        long longId = (long) id;
+        return ownerRepository.getOne(longId);
+    }
+
+    @Override
+    public Owner update(Owner owner) {
+        return null;
+    }
+
+
+
 }

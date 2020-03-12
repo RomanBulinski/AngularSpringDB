@@ -29,10 +29,26 @@ public class OwnerController {
         return owners;
     }
 
+    @GetMapping(path = {"/{id}"})
+    public Owner findOne(@PathVariable("id") int id){
+        return ownerService.findById(id);
+    }
+
     @DeleteMapping(path ={"/{id}"})
     public Owner delete(@PathVariable("id") int id) {
         return ownerService.delete(id);
     }
+
+    @PostMapping()
+    public Owner create(@RequestBody Owner owner) {
+        return ownerService.create(owner);
+    }
+
+    @PutMapping
+    public Owner update(@RequestBody Owner owner){
+        return ownerService.update(owner);
+    }
+
 
 
 }
